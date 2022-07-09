@@ -10,7 +10,6 @@ module.exports = {
   },
   
   addProduct:async(req,res)=>{
-    
         const prods = new Productos(req.body)
         await prods.save();
         return res.status(200).send(req.body)
@@ -22,10 +21,12 @@ module.exports = {
     return res.send(req.params)
   },
   showOne:(req,res)=>{
+    console.log(req);
     Productos.findById(req.params.id)
     .then(data=>{return res.send(data)})
     .catch(err=>console.log(err))
   },
+
   processUpdate:async(req,res)=>{
     console.log(req.body);
     let data=req.query;

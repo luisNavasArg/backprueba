@@ -21,5 +21,4 @@ const productos = new mongoose.Schema ({
         required:true
     }
     });
-
 module.exports = mongoose.model('productos',productos)//team nombre de la colección
